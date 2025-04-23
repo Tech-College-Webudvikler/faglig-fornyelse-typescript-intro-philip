@@ -4,6 +4,7 @@ interface ModalProps {
     isOpen: boolean;
     setIsOpen: (isOpen: boolean) => void;
     boxSize: string;
+    fontColor: string;
     bgcolor: string;
     children: React.ReactNode;
 }
@@ -16,7 +17,7 @@ const sizes: any = {
 };
 
 export default function Modal(props: ModalProps) {
-    const { isOpen, setIsOpen, boxSize, bgcolor, children } = props;
+    const { isOpen, setIsOpen, boxSize, fontColor, bgcolor, children } = props;
 
     return isOpen ? (
         <div
@@ -30,7 +31,7 @@ export default function Modal(props: ModalProps) {
             <div
                 className={`flex flex-col items-center ${colors[bgcolor]} ${sizes[boxSize]} rounded-lg p-4`}
             >
-                <h1 className="text-2xl font-bold text-white">Modal</h1>
+                <h1 className={`text-2xl font-bold ${fontColor}`}>Modal</h1>
                 <p className="flex-1 text-gray-300">{children}</p>
 
                 <button

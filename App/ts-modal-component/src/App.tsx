@@ -30,6 +30,7 @@ export default function App() {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [bgcolor, setBgcolor] = useState<string>("red");
     const [boxSize, setBoxSize] = useState<string>("sm");
+    const [fontColor, setFontColor] = useState<string>("text-white");
 
     return (
         <div className="flex flex-col items-center justify-center h-screen">
@@ -138,6 +139,17 @@ export default function App() {
                         <option value="xl">Ekstra stor</option>
                     </select>
                 </div>
+
+                <div className="flex flex-col gap-2 mt-4">
+                    <label>Farve på tekst</label>
+                    <select
+                        className="border rounded-md"
+                        onChange={(e) => setFontColor(e.target.value)}
+                    >
+                        <option value="text-white">Hvid</option>
+                        <option value="text-black">Sort</option>
+                    </select>
+                </div>
             </div>
 
             <button
@@ -151,6 +163,7 @@ export default function App() {
                 isOpen={isOpen}
                 setIsOpen={setIsOpen}
                 boxSize={boxSize}
+                fontColor={fontColor}
                 bgcolor={bgcolor}
             >
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
