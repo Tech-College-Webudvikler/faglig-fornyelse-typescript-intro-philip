@@ -18,7 +18,7 @@ jobs:
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Does Compile
-        setup-command: npm install
+        setup-command: cd './App' && npm install
         command: npm run build
         timeout: 1
     - name: Autograding Reporter
