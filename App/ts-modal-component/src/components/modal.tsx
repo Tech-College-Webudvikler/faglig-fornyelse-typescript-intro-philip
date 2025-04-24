@@ -32,7 +32,7 @@ export default function Modal(props: ModalProps) {
                 className={`flex flex-col items-center ${colors[bgcolor]} ${sizes[boxSize]} rounded-lg p-4`}
             >
                 <h1 className={`text-2xl font-bold ${fontColor}`}>Modal</h1>
-                <p className="flex-1 text-gray-300">{children}</p>
+                <p className={`flex-1 ${fontColor}`}>{children}</p>
 
                 <button
                     onClick={() => setIsOpen(false)}

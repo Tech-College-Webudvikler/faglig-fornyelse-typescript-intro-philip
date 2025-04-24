@@ -85,28 +85,45 @@ export default function App() {
                         Hvad er forskellen mellem type og interface?
                     </h2>
                     <p className="mb-4">
-                        TypeScript giver to måder at definere typer på: type og
-                        interface. Begge bruges til at beskrive, hvordan data
-                        skal se ud, men de fungerer lidt forskelligt. En
-                        interface bruges primært til at beskrive objekter –
-                        altså hvilke felter et objekt skal have – og kan også
-                        bruges sammen med klasser. En interface kan udvides, så
-                        du kan bygge videre på den i andre dele af koden. type
+                        TypeScript giver to måder at definere typer på:{" "}
+                        <code className="bg-gray-200 px-1 py-0.5 rounded-md">
+                            type og interface
+                        </code>
+                        . Begge bruges til at beskrive, hvordan data skal se ud,
+                        men de fungerer lidt forskelligt. En{" "}
+                        <code className="bg-gray-200 px-1 py-0.5 rounded-md">
+                            interface
+                        </code>{" "}
+                        bruges primært til at beskrive objekter. En{" "}
+                        <code className="bg-gray-200 px-1 py-0.5 rounded-md">
+                            interface
+                        </code>{" "}
+                        kan udvides, så du kan bygge videre på den i andre dele
+                        af koden.{" "}
+                        <code className="bg-gray-200 px-1 py-0.5 rounded-md">
+                            type
+                        </code>{" "}
                         er mere fleksibel: den kan ikke kun bruges til objekter,
                         men også til primitive typer som string og number, samt
-                        til mere avancerede ting som unioner (flere mulige
-                        typer) og kombinationer af typer. De overlapper meget,
-                        men bruges i forskellige situationer.
+                        til mere avancerede ting som unioner{" "}
+                        <code className="bg-gray-200 px-1 py-0.5 rounded-md">
+                            string | number
+                        </code>{" "}
+                        og kombinationer af typer. De overlapper meget, men
+                        bruges i forskellige situationer.
                     </p>
                     <h3 className="font-medium">
                         Eksempel på type og interface
                     </h3>
                     <div className="flex flex-col gap-2">
                         <code className="bg-gray-200 p-2 rounded-md">
-                            type Person = {`{ name: string; age: number; }`}
+                            type Person = {`{ name: string; }`} <br />
+                            type Employee = Person & {`{ jobTitle: string; }`}
                         </code>
                         <code className="bg-gray-200 p-2 rounded-md">
-                            interface Person {`{ name: string; age: number; }`}
+                            interface Person {`{ name: string; }`} <br />
+                            interface Employee extends Person{" "}
+                            {`{ jobTitle: string; }`}
                         </code>
                     </div>
                 </div>
@@ -114,7 +131,7 @@ export default function App() {
 
             <div className="flex gap-4">
                 <div className="flex flex-col gap-2 mt-4">
-                    <label>Farve på Modal</label>
+                    <label className="font-medium">Farve på Modal</label>
                     <select
                         className="border rounded-md"
                         onChange={(e) => setBgcolor(e.target.value)}
@@ -128,7 +145,7 @@ export default function App() {
                 </div>
 
                 <div className="flex flex-col gap-2 mt-4">
-                    <label>Størrelse på Modal</label>
+                    <label className="font-medium">Størrelse på Modal</label>
                     <select
                         className="border rounded-md"
                         onChange={(e) => setBoxSize(e.target.value)}
@@ -141,7 +158,7 @@ export default function App() {
                 </div>
 
                 <div className="flex flex-col gap-2 mt-4">
-                    <label>Farve på tekst</label>
+                    <label className="font-medium">Farve på tekst</label>
                     <select
                         className="border rounded-md"
                         onChange={(e) => setFontColor(e.target.value)}
